@@ -11,7 +11,13 @@ ADD conf/php.ini /usr/local/etc/php/conf.d/php.ini
 RUN a2enmod rewrite
 
 RUN mkdir /var/www/.ssh && chown -R www-data:www-data /var/www
+
+# below line because default image no home dir and crond update satis cound execute shell
 RUN usermod -s /bin/bash www-data
+RUN usermod -d /home/www-data  www-data
+RUN rm -rf /home/www-data 
+RUN mkdir /home/www-data && chown -Rf www-data:www-data /home/www-data  && su - www-data -c "ssh-keygen"
+#
 VOLUME /var/www/.ssh
 
 # symbolic links to index.php and static files
