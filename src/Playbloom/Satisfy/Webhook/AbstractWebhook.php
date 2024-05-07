@@ -37,7 +37,7 @@ abstract class AbstractWebhook
      * @throws ServiceUnavailableHttpException
      */
     public function getResponse(Request $request): Response
-    {
+    {/*  */
         try {
             $this->validate($request);
             $repository = $this->getRepository($request);

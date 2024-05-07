@@ -1,8 +1,7 @@
 version: '3'
 services:
   php:
-    build:
-      context: ./docker/php
+    image: registry.cn-hangzhou.aliyuncs.com/ywimg/satisfy-php-main:20240506-2
     container_name: satisfy_php
     working_dir: /var/www/html
     ports:

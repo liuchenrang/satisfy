@@ -9,6 +9,7 @@ parameters:
   gitlab.auto_add_repo: false
   gitlab.auto_add_repo_type: ~
   gitlab.prefer_ssh_url_type: false
+  
   gitea.secret: '%env(GITEA_SECRET)%'
   gitea.source_urls: [ 'git_url', 'ssh_url', 'clone_url', 'svn_url' ]
   gitea.auto_add_repo: false

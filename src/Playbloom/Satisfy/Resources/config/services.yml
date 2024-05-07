@@ -95,7 +95,14 @@ services:
       - [setSourceUrls, ["%gitea.source_urls%"]]
       - [setAutoAdd, ["%gitea.auto_add_repo%"]]
       - [setAutoAddType, ["%gitea.auto_add_repo_type%"]]
-
+      
+  Playbloom\Satisfy\Webhook\GiteeWebhook:
+    public: true
+    arguments:
+      $secret: "%gitlab.secret%"
+      $autoAdd: "%gitlab.auto_add_repo%"
+      $autoAddType: "%gitlab.auto_add_repo_type%"
+      $preferSshUrlType: "%gitlab.prefer_ssh_url_type%"
   Playbloom\Satisfy\Webhook\GitlabWebhook:
     public: true
     arguments:
